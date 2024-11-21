@@ -2,11 +2,14 @@
 #include <stdlib.h>
 
 
+
 typedef struct Person {
     int id;
     char c;
     struct Person* mother;
 }Person;
+
+
 
 
 int main(){
