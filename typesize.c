@@ -23,7 +23,7 @@ int main(){
     for (int i = 0; i < size; i++) {
         numbers[i] = i + 1; 
     }
-    printf("Tableau: \n");
+    printf("Tableau avant : \n");
     for (int i = 0; i < size; i++) {
         printf("%d ", numbers[i]);
     }
