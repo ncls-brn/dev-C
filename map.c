@@ -3,7 +3,7 @@
 #include <termios.h>
 #include <unistd.h>
 
-typedef struct Map {
+typedef struct Map { 
     int height;
     int width;
     struct Block*** blocks; 
