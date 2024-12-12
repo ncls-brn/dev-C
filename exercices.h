@@ -10,7 +10,6 @@ typedef struct {
     int price;
 } Book;
 
-
 int are_persons_equals(void *a, void *b) {
     Person *p1 = (Person *)a;
     Person *p2 = (Person *)b;
@@ -23,18 +22,16 @@ int are_books_equals(void *a, void *b) {
     return b1->price == b2->price;
 }
 
-
 int is_in_array(void *key, void *array, size_t array_size, size_t element_size,
                 int (*compare)(void *, void *)) {
     for (size_t i = 0; i < array_size; i++) {
         void *element = (char *)array + i * element_size;
         if (compare(key, element)) {
-            return 1; 
+            return 1;  // Trouvé
         }
     }
     return 0; 
 }
-
 
 void swap(void *a, void *b, size_t size) {
     char temp[size];
@@ -42,7 +39,6 @@ void swap(void *a, void *b, size_t size) {
     memcpy(a, b, size);
     memcpy(b, temp, size);
 }
-
 
 void sort(void *array, size_t array_size, size_t element_size,
           int (*compare)(void *, void *), void (*swap_fn)(void *, void *, size_t)) {
@@ -57,16 +53,14 @@ void sort(void *array, size_t array_size, size_t element_size,
     }
 }
 
-
 int is_greater(void *a, void *b) {
     Person *p1 = (Person *)a;
     Person *p2 = (Person *)b;
     return p1->age - p2->age;
 }
 
-
 void eq_function() {
-    Person person1 = {5};
+    Person person1 = {50};
     Person person2 = {50};
     int same_age = are_persons_equals(
         &person1, &person2
@@ -78,9 +72,8 @@ void eq_function() {
     }
 }
 
-
 void linear_search() {
-    Person person1 = {5};
+    Person person1 = {50};
     Person people[] = {{20}, {50}};
     int found = is_in_array(
         &person1, people,
@@ -93,7 +86,7 @@ void linear_search() {
         printf("Person1 is not in the array.\n");
     }
 
-    Book book1 = {5};
+    Book book1 = {50};
     Book books[] = {{20}, {50}};
     found = is_in_array(
         &book1, books,
@@ -107,7 +100,6 @@ void linear_search() {
     }
 }
 
-
 void generic_swap() {
     Person person1 = {50};
     Person person2 = {25};
@@ -118,12 +110,15 @@ void generic_swap() {
     swap(&b1, &b2, sizeof(Book));
 }
 
+
+
+
 int main() {
     eq_function();
     linear_search();
     generic_swap();
 
-    Person people[] = {{25}, {5}, {18},{1}};
+    Person people[] = {{20}, {50}, {188}, {2}};
     sort(
         people,
         sizeof(people) / sizeof(Person),
@@ -131,8 +126,6 @@ int main() {
         is_greater,
         swap
     );
-
-   
     for (int i = 0; i < 4; i++) {
         printf("Person %d: %d years old\n", i + 1, people[i].age);
     }
