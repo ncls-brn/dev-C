@@ -20,6 +20,7 @@ void Password::encrypt() {
 }
 
 
+
 std::string Password::str() {
     return _encrypted_value;
 }
