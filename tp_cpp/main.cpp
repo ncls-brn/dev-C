@@ -15,9 +15,13 @@ int main() {
         
         user.save();
 
+    // on préfère cibler les exceptions spécifiques à chaque erreur possible
+    // quitte à faire plusieurs blocs try/catch.
     } catch (const std::exception &e) {
         std::cerr << "Erreur : " << e.what() << std::endl;
     }
 
+    // Quelques tests sur l'objet Password pour vérifier
+    // son bon fonctionnement auraient été bienvenus ici.
     return 0;
 }

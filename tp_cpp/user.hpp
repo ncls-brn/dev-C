@@ -11,6 +11,12 @@
 class User {
 private:
     std::string name;
+    // Il peut être intéressant ici d'utiliser un smart pointer
+    // std::unique_ptr<Password> password;
+    // Cela créé une nouvelle copie du mot de passe (donc pas
+    // de souci si une autre partie du code free la mémoire)
+    // et donne automatiquement aux instances de User la responsabilité
+    // de libérer la mémoire de leurs mdp quand elle elles sont détruites
     Password* password;
     static const std::string FILE_NAME;
 
