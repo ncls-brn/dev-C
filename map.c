@@ -58,6 +58,8 @@ int main() {
     }
 
     
+    // L'intention et bonne mais la mémoire sera de toute manière libérée
+    // en sortant du programme
     for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
             free(map->blocks[i][j]);
@@ -181,7 +183,6 @@ char get_input() {
     tcsetattr(STDIN_FILENO, TCSANOW, &newt);
 
     ch = getchar();
-
     tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
 
     return ch;

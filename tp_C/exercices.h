@@ -72,6 +72,8 @@ void eq_function() {
     }
 }
 
+// Pour avoir une seule fonction de comparaison, on peut return -1 si obj1 < obj2, 0 si obj1 == obj2, et 1 si obj1 > obj2
+
 void linear_search() {
     Person person1 = {50};
     Person people[] = {{20}, {50}};

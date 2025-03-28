@@ -136,6 +136,11 @@ int main() {
     for (int i = 0; i < 4; i++) {
         printf("Person %d: %d years old\n", i + 1, people[i].age);
     }
+    // De manière générique, le nombre d'elements dans le tableau
+    // est donné par sizeof(people) / sizeof(Person)
+    // On peut aussi utiliser un pointeur pour parcourir le tableau,
+
+    // for (Person* p = people; p < people + sizeof(people) / sizeof(Person); p++)
 
     return 0;
 }

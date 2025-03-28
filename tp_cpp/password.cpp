@@ -1,6 +1,7 @@
 #include "password.hpp"
 
 Password::Password(const std::string &password, bool is_encrypted) 
+    // Pas besoin de garder le mot de passe en clair en mémoire
     : _raw_value(password) {
     if (is_encrypted) {
         _encrypted_value = password;
